@@ -10,7 +10,7 @@ export const BRAND: BrandInfo = {
 export const CERTIFICATES: Certificate[] = [
   {
     id: "0",
-    title: "Cybersecutiy & Enthical Hacking Internship",
+    title: "Cybersecurity & Ethical Hacking Internship",
     issuer: "CODETECH IT SOLUTIONS",
     date: "Feb - June 2025",
     imageUrl: "/images/CTINTERN.jpg",

@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Boxes, Sparkles } from 'lucide-react';
+import { Boxes, Sparkles, ArrowLeft } from 'lucide-react';
 import CertificateCard from './components/CertificateCard';
 import Modal from './components/Modal';
 import { CERTIFICATES, BRAND } from './constants';
@@ -9,6 +9,7 @@ import { Certificate } from './types';
 
 // Cast to any to bypass environment-specific TypeScript errors with framer-motion props
 const MDiv = motion.div as any;
+const MAnchor = motion.a as any;
 
 const App: React.FC = () => {
   const [selectedCert, setSelectedCert] = useState<Certificate | null>(null);
@@ -21,8 +22,22 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen relative selection:bg-indigo-100 selection:text-indigo-900">
+      <MAnchor
+        href="https://Gbharsha1.github.io/"
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.5 }}
+        className="fixed top-6 left-6 z-50 p-3 bg-white/80 backdrop-blur-md border border-white/50 shadow-lg rounded-full text-slate-600 hover:text-indigo-600 hover:scale-110 transition-all duration-300 group"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+      >
+        <ArrowLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform duration-300" />
+      </MAnchor>
       <div className="fixed inset-0 z-0">
-        <div className="absolute inset-0 bg-[url('/images/Internships.jpg')] bg-cover bg-center bg-no-repeat" />
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/Internships.jpg)` }}
+        />
         <div className="absolute inset-0 bg-white/70 backdrop-blur-sm" />
       </div>
 

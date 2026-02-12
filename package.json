@@ -6,7 +6,7 @@
   "homepage": "https://Gbharsha1.github.io/Internship-certificates",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node rename-output.js",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"

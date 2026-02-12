@@ -13,6 +13,13 @@ interface ModalProps {
 // Cast to any to bypass environment-specific TypeScript errors with framer-motion props
 const MDiv = motion.div as any;
 
+const getImageUrl = (path: string) => {
+  if (path.startsWith('/')) {
+    return `${import.meta.env.BASE_URL}${path.slice(1)}`;
+  }
+  return path;
+};
+
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, certificate }) => {
   if (!certificate) return null;
 
@@ -46,7 +53,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, certificate }) => {
 
             <div className="h-64 w-full md:w-1/2 md:h-auto bg-slate-100 relative group">
               <img
-                src={certificate.imageUrl}
+                src={getImageUrl(certificate.imageUrl)}
                 alt={certificate.title}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />

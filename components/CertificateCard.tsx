@@ -23,7 +23,7 @@ const CertificateCard: React.FC<CertificateCardProps> = ({ certificate, onClick 
       <div className="bg-indigo-50 p-4 rounded-xl mr-5 group-hover:bg-indigo-600 transition-colors duration-300">
         <Award className="w-6 h-6 text-indigo-600 group-hover:text-white transition-colors duration-300" />
       </div>
-      
+
       <div className="flex-1">
         <h3 className="text-lg font-semibold text-slate-800 leading-tight">
           {certificate.title}
